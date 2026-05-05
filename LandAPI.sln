@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37111.16 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OG_LandAPI", "OG_LandAPI\OG_LandAPI.csproj", "{8FB32ED0-A992-4699-9731-76B7EAD32240}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FB32ED0-A992-4699-9731-76B7EAD32240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB32ED0-A992-4699-9731-76B7EAD32240}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB32ED0-A992-4699-9731-76B7EAD32240}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB32ED0-A992-4699-9731-76B7EAD32240}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7784E60C-577B-4E11-9F1C-5D1FA7DDEB21}
+	EndGlobalSection
+EndGlobal

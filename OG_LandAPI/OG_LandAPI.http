@@ -1,0 +1,6 @@
+@OG_LandAPI_HostAddress = http://localhost:5253
+
+GET {{OG_LandAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
