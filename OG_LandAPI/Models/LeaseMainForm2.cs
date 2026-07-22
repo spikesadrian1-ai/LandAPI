@@ -6,36 +6,36 @@ namespace OG_LandAPI.Models
     public partial class LeaseMainForm2
     {
         public int Id { get; set; }
-        public string LeaseId { get; set; }
+        public string? LeaseId { get; set; }
         public DateTime? LeaseDate { get; set; }
         public DateTime? EffectiveDate { get; set; }
         public int? PrimaryTerm { get; set; }
         public DateTime? ExpireDate { get; set; }
         public int? TermOption { get; set; }
         public DateTime? SecondExpirationDate { get; set; }
-        public string Active { get; set; }
-        public string LessorId { get; set; }
-        public string LeaseName { get; set; }
-        public string AlternateLeaseName { get; set; }
-        public string LesseeId { get; set; }
+        public string? Active { get; set; }
+        public string? LessorId { get; set; }
+        public string? LeaseName { get; set; }
+        public string? AlternateLeaseName { get; set; }
+        public string? LesseeId { get; set; }
         public decimal? ConsiderationAmount { get; set; }
         public decimal? RoyaltyInterest { get; set; }
         public decimal? ORRI { get; set; }
         public decimal? GrossAcres { get; set; }
         public decimal? NetAcres { get; set; }
-        public string StateId { get; set; }
-        public string CountyId { get; set; }
-        public string LegalDescription { get; set; }
-        public string PaidUp { get; set; }
-        public string Producing { get; set; }
-        public string Unitized { get; set; }
-        public string RenewalLease { get; set; }
-        public string TopLease { get; set; }
-        public string Validated { get; set; }
-        public string Pending { get; set; }
-        public string OkToPay { get; set; }
-        public string OwnerId { get; set; }
-        public string TractId { get; set; }
+        public string? StateId { get; set; }
+        public string? CountyId { get; set; }
+        public string? LegalDescription { get; set; }
+        public string? PaidUp { get; set; }
+        public string? Producing { get; set; }
+        public string? Unitized { get; set; }
+        public string? RenewalLease { get; set; }
+        public string? TopLease { get; set; }
+        public string? Validated { get; set; }
+        public string? Pending { get; set; }
+        public string? OkToPay { get; set; }
+        public string? OwnerId { get; set; }
+        public string? TractId { get; set; }
         public DateTime? AcquiredDate { get; set; }
         public DateTime? NextRentalDue { get; set; }
         public DateTime? Divested { get; set; }
@@ -45,32 +45,32 @@ namespace OG_LandAPI.Models
         public DateTime? Surrendered { get; set; }
         public DateTime? OtherDate { get; set; }
         public DateTime? SecondExpDate { get; set; }
-        public string ResponsibleParty { get; set; }
-        public string Operator { get; set; }
-        public string Assignor { get; set; }
-        public string Assignee { get; set; }
-        public string FieldBroker { get; set; }
-        public string RecordingInformation { get; set; }
-        public string LeaseForm { get; set; }
-        public string AcquisitionCode { get; set; }
-        public string LeaseType { get; set; }
-        public string LeaseStatus { get; set; }
-        public string InstrumentCode { get; set; }
-        public string PayoutCode { get; set; }
-        public string OperatorLeaseNo { get; set; }
-        public string MmsLeaseNo { get; set; }
-        public string OriginalLeaseNo { get; set; }
+        public string? ResponsibleParty { get; set; }
+        public string? Operator { get; set; }
+        public string? Assignor { get; set; }
+        public string? Assignee { get; set; }
+        public string? FieldBroker { get; set; }
+        public string? RecordingInformation { get; set; }
+        public string? LeaseForm { get; set; }
+        public string? AcquisitionCode { get; set; }
+        public string? LeaseType { get; set; }
+        public string? LeaseStatus { get; set; }
+        public string? InstrumentCode { get; set; }
+        public string? PayoutCode { get; set; }
+        public string? OperatorLeaseNo { get; set; }
+        public string? MmsLeaseNo { get; set; }
+        public string? OriginalLeaseNo { get; set; }
         public int? FederalLeaseFlag { get; set; }
-        public string FedStateLeaseNo { get; set; }
-        public string ProjectGroupName { get; set; }
-        public string HbpFlag { get; set; }
-        public string StateId2 { get; set; }
-        public string CountyId2 { get; set; }
-        public string AreaName { get; set; }
-        public string ProspectId { get; set; }
-        public string RegionId { get; set; }
-        public string DistrictId { get; set; }
-        public string BasinId { get; set; }
+        public string? FedStateLeaseNo { get; set; }
+        public string? ProjectGroupName { get; set; }
+        public string? HbpFlag { get; set; }
+        public string? StateId2 { get; set; }
+        public string? CountyId2 { get; set; }
+        public string? AreaName { get; set; }
+        public string? ProspectId { get; set; }
+        public string? RegionId { get; set; }
+        public string? DistrictId { get; set; }
+        public string? BasinId { get; set; }
         public decimal? LeaseholdInterest { get; set; }
         public decimal? WorkingInterest { get; set; }
         public decimal? RecordTitle { get; set; }
@@ -80,10 +80,10 @@ namespace OG_LandAPI.Models
         public decimal? Royalty { get; set; }
         public decimal? Orri1 { get; set; }
         public decimal? Other { get; set; }
-        public string EntityNotes { get; set; }
-        public string MineralOwnership { get; set; }
+        public string? EntityNotes { get; set; }
+        public string? MineralOwnership { get; set; }
         public decimal? MineralOwnershipDecimal { get; set; }
-        public string SurfaceOwnership { get; set; }
+        public string? SurfaceOwnership { get; set; }
         public decimal? SurfaceOwnershipDecimal { get; set; }
         public decimal? TotalAcreage { get; set; }
         public decimal? Developed { get; set; }
@@ -93,7 +93,7 @@ namespace OG_LandAPI.Models
         public decimal? HbpAcres { get; set; }
         public decimal? TotalSurface { get; set; }
         public decimal? SurfacedDeveloped { get; set; }
-        public string AcreageNotes { get; set; }
+        public string? AcreageNotes { get; set; }
         public decimal? BonusPerAcre { get; set; }
         public decimal? TotalBonusAmount { get; set; }
         public decimal? TotalBonusPaid { get; set; }
@@ -106,7 +106,7 @@ namespace OG_LandAPI.Models
         public int? TotalNumberOfPayment { get; set; }
         public int? FrequencyInMonths { get; set; }
         public decimal? EntityShareOfRentals { get; set; }
-        public string ShutInClause { get; set; }
+        public string? ShutInClause { get; set; }
         public int? MaximumShutInDays { get; set; }
         public decimal? ShutInTerm { get; set; }
         public decimal? ShutInCosts { get; set; }
@@ -129,8 +129,8 @@ namespace OG_LandAPI.Models
         public decimal? EntityShareBonusToExtend { get; set; }
         public decimal? BonusPerAcreToExtend { get; set; }
         public decimal? AcquisitionAmount { get; set; }
-        public string LandType { get; set; }
-        public string StatusCode { get; set; }
+        public string? LandType { get; set; }
+        public string? StatusCode { get; set; }
         public decimal? OptionConvBonusPerAcre { get; set; }
         public DateTime? TransferDate { get; set; }
         public decimal? EntityShareAcquisitionAmount { get; set; }
@@ -148,7 +148,7 @@ namespace OG_LandAPI.Models
         public decimal? EntityRoyaltyGas { get; set; }
         public decimal? EntityRoyaltyOil { get; set; }
         public decimal? EntityRoyaltyOther { get; set; }
-        public string Expired { get; set; }
+        public string? Expired { get; set; }
         public decimal? OptExtAmntPerAcre { get; set; }
         public decimal? EntityGrossAcres { get; set; }
         public decimal? EntityGrossDeveloped { get; set; }
@@ -158,15 +158,15 @@ namespace OG_LandAPI.Models
         public decimal? EntityGrossSurface { get; set; }
         public decimal? EnityGrossUndev { get; set; }
         public decimal? IncludeInTotalGrossAcres { get; set; }
-        public string InstrumentFlag { get; set; }
+        public string? InstrumentFlag { get; set; }
         public decimal? MinRoyDue { get; set; }
         public decimal? EntityNetAcres { get; set; }
         public decimal? NetDev { get; set; }
         public decimal? EntityNetDev { get; set; }
         public decimal? NetHbp { get; set; }
         public decimal? EntityNetHbp { get; set; }
-        public string Notes { get; set; }
-        public string NotesOnAcreage { get; set; }
+        public string? Notes { get; set; }
+        public string? NotesOnAcreage { get; set; }
         public decimal? NetOther { get; set; }
         public decimal? NetOtherEntity { get; set; }
         public decimal? NetOutside { get; set; }
@@ -179,49 +179,49 @@ namespace OG_LandAPI.Models
         public decimal? OptAmountPerAcre { get; set; }
         public DateTime? OptExpireDate { get; set; }
         public int? OptExpireDays { get; set; }
-        public string OptToExtend { get; set; }
+        public string? OptToExtend { get; set; }
         public int? OptToExtendDays { get; set; }
         public int? OptPeriod { get; set; }
-        public string OrriMemo { get; set; }
+        public string? OrriMemo { get; set; }
         public decimal? OtherLeaseBurdens { get; set; }
-        public string PoolingType { get; set; }
+        public string? PoolingType { get; set; }
         public decimal? OptPrepaidAmountPerAcre { get; set; }
-        public string SpecialProvisionNotes { get; set; }
-        public string PughHorizon { get; set; }
+        public string? SpecialProvisionNotes { get; set; }
+        public string? PughHorizon { get; set; }
         public DateTime? PughHorizonExpDate { get; set; }
         public DateTime? PughVertExpDate { get; set; }
-        public string PughVert { get; set; }
-        public string Recommend { get; set; }
+        public string? PughVert { get; set; }
+        public string? Recommend { get; set; }
         public decimal? EntityShareRentalAmount { get; set; }
         public decimal? AdvanceRoyaltyPerAcre { get; set; }
         public decimal? ProductionRoyaltyPerAcre { get; set; }
         public decimal? EntityShareProductionRoyaltyAmount { get; set; }
-        public string RoyaltyIntMemo { get; set; }
-        public string Search1 { get; set; }
-        public string Search2 { get; set; }
-        public string Search3 { get; set; }
-        public string Search4 { get; set; }
-        public string Search5 { get; set; }
-        public string Search6 { get; set; }
+        public string? RoyaltyIntMemo { get; set; }
+        public string? Search1 { get; set; }
+        public string? Search2 { get; set; }
+        public string? Search3 { get; set; }
+        public string? Search4 { get; set; }
+        public string? Search5 { get; set; }
+        public string? Search6 { get; set; }
         public int? SeismicPermitExpirationDays { get; set; }
         public DateTime? SeismicPermitExpirationDate { get; set; }
         public int? SeismicPermitExtensionDays { get; set; }
         public bool? WasTheSeismicPermitExtended { get; set; }
-        public string SeismicOptionNotes { get; set; }
+        public string? SeismicOptionNotes { get; set; }
         public decimal? ShutInPerAcre { get; set; }
         public decimal? ShutInAmount { get; set; }
-        public string ShutInDays { get; set; }
+        public string? ShutInDays { get; set; }
         public decimal? EntityShareShutInAmount { get; set; }
-        public string ShutInProvision { get; set; }
+        public string? ShutInProvision { get; set; }
         public decimal? SurfaceFeeAmount { get; set; }
         public decimal? SurfaceFeeAmountPerAcre { get; set; }
         public decimal? EntityShareSurfaceFeeAmount { get; set; }
         public int? TermMonths { get; set; }
-        public string WellIdNo { get; set; }
-        public string CreatedBy { get; set; }
+        public string? WellIdNo { get; set; }
+        public string? CreatedBy { get; set; }
         public DateTime? CreatedDateTime { get; set; }
-        public string ModifiedBy { get; set; }
+        public string? ModifiedBy { get; set; }
         public DateTime? ModifiedDateTime { get; set; }
-        public string TractOwnerPk { get; set; }
+        public string? TractOwnerPk { get; set; }
     }
 }

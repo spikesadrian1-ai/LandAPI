@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.37111.16 d17.14
+VisualStudioVersion = 17.14.37111.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OG_LandAPI", "OG_LandAPI\OG_LandAPI.csproj", "{8FB32ED0-A992-4699-9731-76B7EAD32240}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainLayer", "..\..\..\OG_Blazor-App\DomainLayer\DomainLayer.csproj", "{8FC1B3A8-642D-46CD-7E4A-075273C7A73D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8FB32ED0-A992-4699-9731-76B7EAD32240}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FB32ED0-A992-4699-9731-76B7EAD32240}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FB32ED0-A992-4699-9731-76B7EAD32240}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FC1B3A8-642D-46CD-7E4A-075273C7A73D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC1B3A8-642D-46CD-7E4A-075273C7A73D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC1B3A8-642D-46CD-7E4A-075273C7A73D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC1B3A8-642D-46CD-7E4A-075273C7A73D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

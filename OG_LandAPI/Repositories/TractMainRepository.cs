@@ -1,13 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OG_LandAPI.Interfaces;
+using OG_LandAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using OG_LandAPI.Models;
 
-namespace OG_LandAPI.Intefaces
+namespace OG_LandAPI.Repositories
 {
-    public class TractMainRepository
+    public class TractMainRepository : ITractMainRepository
     {
         /// <summary>
         /// ADDED DATABASE LINK
@@ -52,42 +53,17 @@ namespace OG_LandAPI.Intefaces
         }
 
 
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="name"></param>
-        ///// <returns></returns>
-        ////public async Task<IEnumerable<TractMainForm>> SearchAllTracts(string name)
-        //public Task<List<TractMainForm>> SearchAllTracts(string name)
-        //{
+        Task<object> ITractMainRepository.GetTractsByID(string TractID)
+        {
+            throw new NotImplementedException();
+        }
 
-        //    IQueryable<TractMainForm> query = _context.TractMainForm;
+        public Task<object> SearchAllTracts(string name)
+        {
+            throw new NotImplementedException();
+        }
 
-        //    if (!string.IsNullOrEmpty(name))
-        //    {
-        //        query = query.Where(e => e.TractId.Contains(name)
-        //                         //|| e.CountyName.Contains(countyname)
-        //                         );
-
-        //    }
-        //    if (name != null)
-        //    {
-        //        query = query.Where(e => e.TractId == name);
-        //    }
-
-        //    //return query.ToList();
-        //    return Task.FromResult(query.ToList());
-
-
-        //}
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public async Task<object> AddNewTract(TractMainForm tractMainForm)
+        public async Task<TractMainForm> AddNewTract(TractMainForm tractMainForm)
         {
             var result = await _context.TractMainForm.AddAsync(tractMainForm);
             await _context.SaveChangesAsync();
@@ -96,19 +72,12 @@ namespace OG_LandAPI.Intefaces
             ////  OR
 
             // if (_context.TractMainForm.Any(x => x.propertyName.Equals(TractMainForm.TractId, StringComparison.OrdinalIgnoreCase))) return;
-          
+
             //this._context.TractMainForm.Add(tractMainForm);
             //await this._context.SaveChangesAsync();
         }
 
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        //public async Task<object> UpdateTract(string countyID
-        public async Task<object> UpdateTract(TractMainForm tractMainForm)
+        public async Task<TractMainForm> UpdateTract(TractMainForm tractMainForm)
         {
             var result = await _context.TractMainForm
                 .FirstOrDefaultAsync(e => e.TractId == tractMainForm.TractId);
@@ -126,10 +95,11 @@ namespace OG_LandAPI.Intefaces
             }
 
             return null;
+        }
 
-            //  OR
-
-
+        public Task<TractMainForm> DeleteTract(TractMainForm tractMainForm)
+        {
+            throw new NotImplementedException();
         }
 
 
@@ -155,7 +125,6 @@ namespace OG_LandAPI.Intefaces
 
         //    return null;
         //}
-
 
     }
 }

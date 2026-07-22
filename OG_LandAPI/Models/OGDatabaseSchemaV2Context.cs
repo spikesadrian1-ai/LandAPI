@@ -6,10 +6,6 @@ namespace OG_LandAPI.Models
 {
     public partial class OGDatabaseSchemaV2Context : DbContext
     {
-        //internal object IOwnerRepository;
-        //public object ownerAddressesMain { get; internal set; }
-
-
 
         public OGDatabaseSchemaV2Context()
         {
@@ -104,7 +100,10 @@ namespace OG_LandAPI.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("DevConnection");
+                //optionsBuilder.UseSqlServer("OldConnection");
+                //optionsBuilder.UseSqlServer("DevConnection");
+                //optionsBuilder.UseSqlServer("OldDevConnection");
+                optionsBuilder.UseSqlServer("Test"); // Null ExceptionError
             }
         }
 

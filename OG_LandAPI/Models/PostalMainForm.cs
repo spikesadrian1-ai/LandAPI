@@ -7,9 +7,9 @@ namespace OG_LandAPI.Models
 {
     public partial class PostalMainForm : IPostalMainRepository
     {
-        public string PostalId { get; set; }
-        public string PostalCode { get; set; }
-        public string PostalArea { get; set; }
+        public string? PostalId { get; set; }
+        public string? PostalCode { get; set; }
+        public string? PostalArea { get; set; }
 
         public Task<object> GetAllPostalsByID(int ID)
         {
@@ -21,7 +21,7 @@ namespace OG_LandAPI.Models
             throw new NotImplementedException();
         }
 
-        public Task<object> SearchAllPostals(string name)
+        public Task<object> SearchAllPostals(string? name)
         {
             throw new NotImplementedException();
         }

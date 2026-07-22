@@ -8,9 +8,9 @@ namespace OG_LandAPI.Models
     public partial class CountyMasterMainForm : ICountyRepository
     {      
         public int Id { get; set; }
-        public string StateId { get; set; }
-        public string CountyId { get; set; }
-        public string CountyName { get; set; }
+        public string? StateId { get; set; }
+        public string? CountyId { get; set; }
+        public string? CountyName { get; set; }
 
 
         /// <summary>
@@ -18,7 +18,7 @@ namespace OG_LandAPI.Models
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public Task<object> GetCountiesByID(string CountyID)
+        public Task<object> GetCountiesByID(string? CountyID)
         {
             throw new NotImplementedException();
         }
@@ -39,7 +39,7 @@ namespace OG_LandAPI.Models
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public Task<object> SearchAllCounties(string name)
+        public Task<object> SearchAllCounties(string? name)
         {
             throw new NotImplementedException();
         }
@@ -83,7 +83,7 @@ namespace OG_LandAPI.Models
         /// </summary>
         /// <param name="countyID"></param>
         /// <returns></returns>
-        public Task<object> UpdateCounty(int Id, string CountyID)
+        public Task<object> UpdateCounty(int Id, string? CountyID)
         {
             throw new NotImplementedException();
         }

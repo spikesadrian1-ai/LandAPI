@@ -57,7 +57,7 @@ namespace WebAPI.Controllers
             string query = @"SELECT * FROM dbo.StateMainForm";
 
             DataTable state = new DataTable();
-            const string V = "DevConnection";
+            const string V = "SQLExpressDBConnectionForOGDatabaseSchemaV2";
             string sqlDataSource = _config.GetConnectionString(V);
             SqlDataReader Reader;
             using (SqlConnection devCon = new SqlConnection(sqlDataSource))
@@ -87,7 +87,7 @@ namespace WebAPI.Controllers
             string query = @"SELECT * FROM dbo.StateMainForm";
 
             DataTable stateMainForm = new DataTable();
-            const string V = "DevConnection";
+            const string V = "SQLExpressDBConnectionForOGDatabaseSchemaV2";
             string sqlDataSource = _config.GetConnectionString(V);
             SqlDataReader Reader;
             using (SqlConnection devCon = new SqlConnection(sqlDataSource))
@@ -127,7 +127,7 @@ namespace WebAPI.Controllers
 
             string sqlCmd = @"SELECT * FROM dbo.StateMainForm";
             dt = new DataTable();
-            const string sqlCon = "DevConnection";
+            const string sqlCon = "SQLExpressDBConnectionForOGDatabaseSchemaV2";
             sda = new SqlDataAdapter(sqlCmd, sqlCon);
             sda.Fill(dt);
             for (int i = 0; i < dt.Rows.Count; i++)

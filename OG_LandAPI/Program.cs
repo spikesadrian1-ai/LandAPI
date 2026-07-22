@@ -1,11 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Serialization;
+using OG_LandAPI.Interfaces;
 using OG_LandAPI.Models;
+using OG_LandAPI.Repositories;
 
 
 internal class Program
 {
-
+    
     private static void Main(string[] args)
     {
 
@@ -29,7 +31,7 @@ internal class Program
         options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
             .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver
             = new DefaultContractResolver());
-                        
+
         /// ADDED SWAGGER/OPEN API
         ///builder.Services.AddSwaggerGen(c =>
         ///{
@@ -37,13 +39,18 @@ internal class Program
         ///});
 
         //builder.Services.AddConnections();
+        
+        ///
+        builder.Services.AddScoped<ITractMainRepository, TractMainRepository>();
 
         // DATABASE CONNECTION: ADD TO CONNECT TO SPECIFIC CLASSES USING EFCORE
+        //You have to save DBConnectionString in the appsettings.json file
         builder.Services.AddDbContext<OGDatabaseSchemaV2Context>(options =>
-        options.UseSqlServer("DevConnection"));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("Test")));
 
         var app = builder.Build();
 
+        
         // ENABLE CORS
         app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 

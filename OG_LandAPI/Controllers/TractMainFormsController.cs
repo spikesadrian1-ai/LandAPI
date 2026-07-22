@@ -1,41 +1,23 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using OG_LandAPI.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using OG_LandAPI.Models.zPagination;
-using WebAPI.Helpers;
-using OG_LandAPI.Intefaces;
+using OG_LandAPI.Interfaces;
+using OG_LandAPI.Models;
 
-namespace WebAPI.Controllers
+namespace OG_LandAPI.Controllers
 {
+    /// <summary>
+    /// ADDED CONNECTION TO CURRENT CONTROLLER
+    /// </summary>
+    /// <param name="context"></param>
     [Route("api/[controller]")]
     [ApiController]
-    public class TractMainFormsController : ControllerBase
+    public class TractMainFormsController(OGDatabaseSchemaV2Context context
+                                      , ITractMainRepository tractMainRepository) : ControllerBase
     {
-        /// <summary>
-        /// ADDED DATABASE LINK
-        /// </summary>
-        private readonly OGDatabaseSchemaV2Context _context;
-        private readonly ITractMainRepository tractMainRepository; 
-
-        /// <summary>
-        /// ADDED CONNECTION TO CURRENT CONTROLLER
-        /// </summary>
-        /// <param name="context"></param>
-        public TractMainFormsController(OGDatabaseSchemaV2Context context/*, Repositories.ITractMainRepository tractMainRepository*/)
-        {
-            _context = context;
-            this.tractMainRepository = tractMainRepository;
-        }
 
 
         /// <summary>
-        /// ALL OWNERS
+        /// ALL TRACTS
         /// CREATE ASYNC METHOD
         /// </summary>
         // GET: api/<TractMainFormsController>
@@ -46,7 +28,7 @@ namespace WebAPI.Controllers
             //await HttpContext.InsertPaginationParamInResponse(Queryable, pagination.QuantityPerPage);
             //return await Queryable.Paginate(pagination).ToListAsync();
 
-            return await _context.TractMainForm.ToListAsync();
+            return await context.TractMainForm.ToListAsync();
         }
 
 
@@ -56,7 +38,7 @@ namespace WebAPI.Controllers
         [HttpGet("GetTractsByID/{id}")]
         public async Task<ActionResult<TractMainForm>> GetTractsByID(int id)
         {
-            var tractMainForm = await _context.TractMainForm.FindAsync(id);
+            var tractMainForm = await context.TractMainForm.FindAsync(id);
 
             if (tractMainForm == null)
             {
@@ -84,10 +66,10 @@ namespace WebAPI.Controllers
         [HttpGet("SearchAllTracts/{name}")]
         //public async Task<List<TractMainForm>> SearchAllTracts(string name)
         //  OR  public List<TractMainForm> SearchAllTracts(string name)
-        public async Task<List<TractMainForm>> SearchAllTracts(string name)
+        public async Task<List<TractMainForm?>> SearchAllTracts(string name)
         {
 
-            IQueryable<TractMainForm> query = _context.TractMainForm;
+            IQueryable<TractMainForm?> query = context.TractMainForm;
 
             if (!string.IsNullOrEmpty(name))
             {
@@ -133,7 +115,8 @@ namespace WebAPI.Controllers
                 var createdNewTract = await tractMainRepository.AddNewTract(tractMainForm);
 
                 // USING CREATEDATACTION/NAMEOF ALLOWS YOU SWAP METHODS EASILY
-                return CreatedAtAction(nameof(GetTractsByID), new { id = createdNewTract.TractId }, createdNewTract);
+                return CreatedAtAction(nameof(GetTractsByID), 
+                    new { id = createdNewTract.TractId }, createdNewTract);
 
             }
             catch (Exception)
@@ -152,17 +135,14 @@ namespace WebAPI.Controllers
         [HttpPut("{id:int}")]
         public async Task<ActionResult<TractMainForm>> UpdateTract(string TractID, TractMainForm tractMainForm)
         {
-            try
-            {
-                if (TractID != tractMainForm.TractId)
-                {
+            try {
+                if (TractID != tractMainForm.TractId) {
                     return BadRequest("Tract ID is a mismatch");
                 }
 
                 var tractToUpdate = await tractMainRepository.GetTractsByID(TractID);
 
-                if (tractToUpdate == null)
-                {
+                if (tractToUpdate == null) {
                     return NotFound($"Tract with TractID = {TractID} not found");
                 }
 
@@ -196,12 +176,10 @@ namespace WebAPI.Controllers
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<TractMainForm>> DeleteTract(string TractID, TractMainForm tractMainForm)
         {
-            try
-            {
+            try {
                 var tractToDelete = await tractMainRepository.GetTractsByID(TractID);
 
-                if (tractToDelete == null)
-                {
+                if (tractToDelete == null) {
                     return NotFound($"Tract with ID = {TractID} not found");
                 }
 

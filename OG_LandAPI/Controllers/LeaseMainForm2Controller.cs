@@ -11,7 +11,7 @@ using OG_LandAPI.Models;
 using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 
-namespace WebAPI.Controllers
+namespace OG_LandAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -21,15 +21,23 @@ namespace WebAPI.Controllers
         /// ADDED DATABASE LINK
         /// </summary>
         private readonly IConfiguration _context;
-
+        //private readonly OGDatabaseSchemaV2Context _context;
 
         /// <summary>
         /// ADDED CONNECTION TO CURRENT CONTROLLER
         /// </summary>
         /// <param name="context"></param>
-        public LeaseMainForm2Controller(IConfiguration context)
+        public LeaseMainForm2Controller(
+            IConfiguration context
+            //, OGDatabaseSchemaV2Context _context
+            )
         {
             _context = context;
+        }
+
+        public JsonResult RetrieveAllLeases()
+        {
+            return RetrieveAllLeases(_context);
         }
 
 
@@ -39,19 +47,21 @@ namespace WebAPI.Controllers
         /// <param name="context"></param>
         //[Route("LeaseMainForm2")]
         [HttpGet]
-        public JsonResult RetrieveAllLeases()
+        //public async Task<JsonResult<IEnumerable<LeaseMainForm2>>> RetrieveAllLeases()
+        public JsonResult RetrieveAllLeases(IConfiguration _context)
         {
 
             string query = @"SELECT * FROM dbo.LeaseMainForm2";
 
-            DataTable leaseTable = new DataTable();
+            DataTable leaseTable = new();
+            //const string V = "SQLExpressDBConnectionForOGDatabaseSchemaV2";
             const string V = "DevConnection";
             string sqlDataSource = _context.GetConnectionString(V);
-            Microsoft.Data.SqlClient.SqlDataReader leaseReader;
-            using (Microsoft.Data.SqlClient.SqlConnection devCon = new Microsoft.Data.SqlClient.SqlConnection(sqlDataSource))
+            SqlDataReader leaseReader;
+            using (SqlConnection devCon = new(sqlDataSource))
             {
                 devCon.Open();
-                using (Microsoft.Data.SqlClient.SqlCommand leaseCommand = new Microsoft.Data.SqlClient.SqlCommand(query, devCon))
+                using (SqlCommand leaseCommand = new(query, devCon))
                 {
                     leaseReader = leaseCommand.ExecuteReader();
                     leaseTable.Load(leaseReader);
@@ -72,19 +82,19 @@ namespace WebAPI.Controllers
         /// <param name="context"></param>
         [Route("SearchAllLeases/{name}")]
         [HttpGet]
-        public JsonResult SearchAllLeases(string name)
+        public JsonResult SearchAllLeases(LeaseMainForm2 leaseMain)
         {
 
-            string query = @"SELECT * FROM dbo.LeaseMainForm2 WHERE   ";
+            string query = @"SELECT * FROM dbo.LeaseMainForm2 WHERE Lease_ID = '" + leaseMain.LeaseId+@"'";
 
             DataTable leaseTable = new DataTable();
-            const string V = "DevConnection";
+            const string V = "SQLExpressDBConnectionForOGDatabaseSchemaV2";
             string sqlDataSource = _context.GetConnectionString(V);
-            Microsoft.Data.SqlClient.SqlDataReader leaseReader;
-            using (Microsoft.Data.SqlClient.SqlConnection devCon = new Microsoft.Data.SqlClient.SqlConnection(sqlDataSource))
+            SqlDataReader leaseReader;
+            using (SqlConnection devCon = new SqlConnection(sqlDataSource))
             {
                 devCon.Open();
-                using (Microsoft.Data.SqlClient.SqlCommand leaseCommand = new Microsoft.Data.SqlClient.SqlCommand(query, devCon))
+                using (SqlCommand leaseCommand = new SqlCommand(query, devCon))
                 {
                     leaseReader = leaseCommand.ExecuteReader();
                     leaseTable.Load(leaseReader);
@@ -112,13 +122,13 @@ namespace WebAPI.Controllers
                             ";
 
             DataTable leaseTable = new DataTable();
-            const string V = "DevConnection";
+            const string V = "SQLExpressDBConnectionForOGDatabaseSchemaV2";
             string sqlDataSource = _context.GetConnectionString(V);
-            Microsoft.Data.SqlClient.SqlDataReader leaseReader;
-            using (Microsoft.Data.SqlClient.SqlConnection devCon = new Microsoft.Data.SqlClient.SqlConnection(sqlDataSource))
+            SqlDataReader leaseReader;
+            using (SqlConnection devCon = new SqlConnection(sqlDataSource))
             {
                 devCon.Open();
-                using (Microsoft.Data.SqlClient.SqlCommand leaseCommand = new Microsoft.Data.SqlClient.SqlCommand(query, devCon))
+                using (SqlCommand leaseCommand = new SqlCommand(query, devCon))
                 {
                     leaseReader = leaseCommand.ExecuteReader();
                     leaseTable.Load(leaseReader);
@@ -140,18 +150,18 @@ namespace WebAPI.Controllers
         {
             string query = @"
                             UPDATE dbo.LeaseMainForm2 SET
-                            LeaseMainForm2 = '" + leaseMain.LeaseId + @"'
+                            Lease_ID = '" + leaseMain.LeaseId + @"'
                             WHERE Id = " + leaseMain.Id + @" 
                             ";
 
             DataTable leaseTable = new DataTable();
-            const string V = "DevConnection";
+            const string V = "SQLExpressDBConnectionForOGDatabaseSchemaV2";
             string sqlDataSource = _context.GetConnectionString(V);
-            Microsoft.Data.SqlClient.SqlDataReader leaseReader;
-            using (Microsoft.Data.SqlClient.SqlConnection devCon = new Microsoft.Data.SqlClient.SqlConnection(sqlDataSource))
+            SqlDataReader leaseReader;
+            using (SqlConnection devCon = new SqlConnection(sqlDataSource))
             {
                 devCon.Open();
-                using (Microsoft.Data.SqlClient.SqlCommand leaseCommand = new Microsoft.Data.SqlClient.SqlCommand(query, devCon))
+                using (SqlCommand leaseCommand = new SqlCommand(query, devCon))
                 {
                     leaseReader = leaseCommand.ExecuteReader();
                     leaseTable.Load(leaseReader);
@@ -177,13 +187,13 @@ namespace WebAPI.Controllers
                             ";
 
             DataTable leaseTable = new DataTable();
-            const string V = "DevConnection";
+            const string V = "SQLExpressDBConnectionForOGDatabaseSchemaV2";
             string sqlDataSource = _context.GetConnectionString(V);
-            Microsoft.Data.SqlClient.SqlDataReader leaseReader;
-            using (Microsoft.Data.SqlClient.SqlConnection devCon = new Microsoft.Data.SqlClient.SqlConnection(sqlDataSource))
+            SqlDataReader leaseReader;
+            using (SqlConnection devCon = new SqlConnection(sqlDataSource))
             {
                 devCon.Open();
-                using (Microsoft.Data.SqlClient.SqlCommand leaseCommand = new Microsoft.Data.SqlClient.SqlCommand(query, devCon))
+                using (SqlCommand leaseCommand = new SqlCommand(query, devCon))
                 {
                     leaseReader = leaseCommand.ExecuteReader();
                     leaseTable.Load(leaseReader);

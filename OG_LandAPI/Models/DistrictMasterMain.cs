@@ -8,9 +8,9 @@ namespace OG_LandAPI.Models
     public partial class DistrictMasterMain : IDistrictMasterRepository
     {
         public int Id { get; set; }
-        public string DistrictId { get; set; }
-        public string DistrictName { get; set; }
-        public string Notes { get; set; }
+        public string? DistrictId { get; set; }
+        public string? DistrictName { get; set; }
+        public string? Notes { get; set; }
 
         public Task<object> GetAllDistricts(int id)
         {
@@ -22,7 +22,7 @@ namespace OG_LandAPI.Models
             throw new NotImplementedException();
         }
 
-        public Task<object> SearchAllDistricts(string name)
+        public Task<object> SearchAllDistricts(string? name)
         {
             throw new NotImplementedException();
         }

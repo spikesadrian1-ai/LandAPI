@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using OG_LandAPI.Models;
+﻿using OG_LandAPI.Models;
 
-namespace OG_LandAPI.Intefaces
+namespace OG_LandAPI.Interfaces
 {
     public interface ITractMainRepository
     {

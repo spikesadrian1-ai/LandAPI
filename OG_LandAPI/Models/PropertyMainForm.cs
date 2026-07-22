@@ -8,41 +8,41 @@ namespace OG_LandAPI.Models
     public partial class PropertyMainForm : IPropertyMainRepository
     {
         public int Id { get; set; }
-        public string PropertyId { get; set; }
-        public string AcctIdNo { get; set; }
-        public string Description { get; set; }
-        public string PropertyType { get; set; }
-        public string GrantorId { get; set; }
-        public string GranteeId { get; set; }
+        public string? PropertyId { get; set; }
+        public string? AcctIdNo { get; set; }
+        public string? Description { get; set; }
+        public string? PropertyType { get; set; }
+        public string? GrantorId { get; set; }
+        public string? GranteeId { get; set; }
         public DateTime? Acquired { get; set; }
         public DateTime? Divested { get; set; }
         public decimal? Original { get; set; }
         public decimal? Current { get; set; }
-        public string ElectricityOn { get; set; }
-        public string WaterOn { get; set; }
-        public string GasOn { get; set; }
-        public string IsDamaged { get; set; }
-        public string IsVacant { get; set; }
-        public string IsUnsecured { get; set; }
-        public string ForSale { get; set; }
-        public string CattleOk { get; set; }
-        public string Active { get; set; }
-        public string SoldTo { get; set; }
-        public string Status { get; set; }
-        public string Address { get; set; }
-        public string StateId { get; set; }
-        public string CountyId { get; set; }
-        public string City { get; set; }
-        public string Zip { get; set; }
-        public string Country { get; set; }
-        public string SurveyTwnRng { get; set; }
-        public string Abstract { get; set; }
-        public string Block { get; set; }
-        public string Lot { get; set; }
-        public string Section { get; set; }
-        public string FieldName { get; set; }
-        public string AreaName { get; set; }
-        public string LegalDescription { get; set; }
+        public string? ElectricityOn { get; set; }
+        public string? WaterOn { get; set; }
+        public string? GasOn { get; set; }
+        public string? IsDamaged { get; set; }
+        public string? IsVacant { get; set; }
+        public string? IsUnsecured { get; set; }
+        public string? ForSale { get; set; }
+        public string? CattleOk { get; set; }
+        public string? Active { get; set; }
+        public string? SoldTo { get; set; }
+        public string? Status { get; set; }
+        public string? Address { get; set; }
+        public string? StateId { get; set; }
+        public string? CountyId { get; set; }
+        public string? City { get; set; }
+        public string? Zip { get; set; }
+        public string? Country { get; set; }
+        public string? SurveyTwnRng { get; set; }
+        public string? Abstract { get; set; }
+        public string? Block { get; set; }
+        public string? Lot { get; set; }
+        public string? Section { get; set; }
+        public string? FieldName { get; set; }
+        public string? AreaName { get; set; }
+        public string? LegalDescription { get; set; }
         public decimal? SurfaceInterest { get; set; }
         public decimal? MineralInterest { get; set; }
         public decimal? RoyaltyInterest { get; set; }
@@ -80,58 +80,58 @@ namespace OG_LandAPI.Models
         public decimal? NetLeasedOtherAcres { get; set; }
         public decimal? GrossAcresSubsidenceAcres { get; set; }
         public decimal? NetAcresSubsidenceAcres { get; set; }
-        public string ApprDistrictId { get; set; }
+        public string? ApprDistrictId { get; set; }
         public DateTime? ApprDistributonYear { get; set; }
         public decimal? LandValue { get; set; }
         public decimal? ImprovementValue { get; set; }
-        public string TaxYear { get; set; }
+        public string? TaxYear { get; set; }
         public decimal? TaxAmount1 { get; set; }
         public decimal? TaxAmount2 { get; set; }
         public decimal? TaxAmount3 { get; set; }
         public decimal? TaxAmount4 { get; set; }
-        public string TaxRemarks { get; set; }
+        public string? TaxRemarks { get; set; }
         public DateTime? BeginDate { get; set; }
         public DateTime? EndDate { get; set; }
-        public string HuntingRate { get; set; }
-        public string HuntingUnit { get; set; }
-        public string MaxUnits { get; set; }
-        public string HuntingNotes { get; set; }
-        public string RecordingInformation { get; set; }
-        public string TimberType { get; set; }
-        public string AverageAge { get; set; }
-        public string AverageHeight { get; set; }
-        public string AverageGirth { get; set; }
+        public string? HuntingRate { get; set; }
+        public string? HuntingUnit { get; set; }
+        public string? MaxUnits { get; set; }
+        public string? HuntingNotes { get; set; }
+        public string? RecordingInformation { get; set; }
+        public string? TimberType { get; set; }
+        public string? AverageAge { get; set; }
+        public string? AverageHeight { get; set; }
+        public string? AverageGirth { get; set; }
         public int? EstimatedNumberOfTrees { get; set; }
         public decimal? EstimatedTimberValue { get; set; }
         public DateTime? LastCutDate { get; set; }
-        public string LastCutBy { get; set; }
+        public string? LastCutBy { get; set; }
         public DateTime? NextCutDate { get; set; }
-        public string NextCutBy { get; set; }
-        public string TimberRemarks { get; set; }
-        public string CarrierId { get; set; }
-        public string InsuranceType { get; set; }
-        public string Description2 { get; set; }
+        public string? NextCutBy { get; set; }
+        public string? TimberRemarks { get; set; }
+        public string? CarrierId { get; set; }
+        public string? InsuranceType { get; set; }
+        public string? Description2 { get; set; }
         public decimal? InsuranceCost { get; set; }
         public DateTime? ExpirationDate { get; set; }
-        public string InsuranceNotes { get; set; }
-        public string MortgageCompanyId { get; set; }
-        public string LoanNumber { get; set; }
-        public string AgentName { get; set; }
-        public string AgentPhone { get; set; }
-        public string AgentAddress { get; set; }
-        public string Field1 { get; set; }
-        public string Field2 { get; set; }
-        public string Field3 { get; set; }
-        public string Field4 { get; set; }
-        public string SpecialProvisionsNotes { get; set; }
-        public string SurfaceOwnershipType { get; set; }
-        public string ProspectId { get; set; }
-        public string RegionId { get; set; }
-        public string AcctIdNo2 { get; set; }
+        public string? InsuranceNotes { get; set; }
+        public string? MortgageCompanyId { get; set; }
+        public string? LoanNumber { get; set; }
+        public string? AgentName { get; set; }
+        public string? AgentPhone { get; set; }
+        public string? AgentAddress { get; set; }
+        public string? Field1 { get; set; }
+        public string? Field2 { get; set; }
+        public string? Field3 { get; set; }
+        public string? Field4 { get; set; }
+        public string? SpecialProvisionsNotes { get; set; }
+        public string? SurfaceOwnershipType { get; set; }
+        public string? ProspectId { get; set; }
+        public string? RegionId { get; set; }
+        public string? AcctIdNo2 { get; set; }
         public decimal? DeedAcres { get; set; }
-        public string InsuranceDescription { get; set; }
+        public string? InsuranceDescription { get; set; }
         public decimal? Interest { get; set; }
-        public string InterestType { get; set; }
+        public string? InterestType { get; set; }
         public decimal? NetProducingRoyaltyAcres { get; set; }
 
         public Task<object> GetPropertiesByID(int ID)
@@ -144,7 +144,7 @@ namespace OG_LandAPI.Models
             throw new NotImplementedException();
         }
 
-        public Task<object> SearchProperty(string name)
+        public Task<object> SearchProperty(string? name)
         {
             throw new NotImplementedException();
         }

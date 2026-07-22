@@ -1,16 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using OG_LandAPI.Models;
-using System.Data.SqlClient;
-using Microsoft.AspNetCore.Http;
-using OG_LandAPI.Repositories;
 
-namespace WebAPI.Controllers
+namespace OG_LandAPI.Controllers
 {   
     [Route("api/[controller]")]
     [ApiController]
